@@ -119,21 +119,21 @@ namespace EdinInstrum_Library
 
         public string GetUpdateQueryString()
         {
-            return "update Books set Name = '" + name + "', Published_Year = " + publishedYear.ToString() +", Branch_Location = " + branch.id.ToString() + ", Availability = " + availabilty.ToString() + " where ID=" + id.ToString();
+            return "update books set Name = '" + name + "', Published_Year = " + publishedYear.ToString() +", Branch_Location = " + branch.id.ToString() + ", Availability = " + availabilty.ToString() + " where ID=" + id.ToString();
         }
 
         public string GetInsertQueryString()
         {
-            return "insert into Books (ID, Name, Published_Year, Branch_Location, Availability) values (" + id.ToString() + ", '" + name + "', " + publishedYear.ToString() + ", " + branch.id.ToString() + ", " + availabilty.ToString() + ")";
+            return "insert into books (ID, Name, Published_Year, Branch_Location, Availability) values (" + id.ToString() + ", '" + name + "', " + publishedYear.ToString() + ", " + branch.id.ToString() + ", " + availabilty.ToString() + ")";
         }
         public string GetRemoveQueryString()
         {
-            return "DELETE FROM Books WHERE ID = " + id.ToString();
+            return "DELETE FROM books WHERE ID = " + id.ToString();
         }
 
         public string GetUpdateIDString(int newID)
         {
-            return "update Books set ID = " + newID.ToString() + " where ID=" + id.ToString();
+            return "update books set ID = " + newID.ToString() + " where ID=" + id.ToString();
 
         }
 
@@ -212,11 +212,12 @@ namespace EdinInstrum_Library
 
         private bool ConnectToDatabase()
         {
-            string server = "localhost",
-                database = "EdIn",
-                username = "root",
-                password = "",
-                constring = "SERVER=" + server + ";DATABASE=" + database + ";UID=" + username + ";PASSWORD=" + password + ";";
+            string server = "sql8.freesqldatabase.com",
+                database = "sql8513351",
+                username = "sql8513351",
+                password = "C2m8IVWAgE",
+                port = "3306",
+                constring = "SERVER=" + server + ", " + port + "; DATABASE=" + database + ";UID=" + username + ";PASSWORD=" + password + ";";
 
             databaseConnection.ConnectionString = constring;
 

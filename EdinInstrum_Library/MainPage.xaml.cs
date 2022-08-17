@@ -162,7 +162,7 @@ namespace EdinInstrum_Library
                 txtSelectedBookInfoData.Text = Wnd.allBooks[selectedBook].GetInfo();
 
                 //Update the book database
-                string query = "update Books set Availability=" + (Wnd.allBooks[selectedBook].availabilty).ToString() +" where ID=" + selectedBook.ToString();
+                string query = "update books set Availability=" + (Wnd.allBooks[selectedBook].availabilty).ToString() +" where ID=" + selectedBook.ToString();
                 Wnd.ExecuteQuery(query);
 
                 //Update the branch database
@@ -183,7 +183,7 @@ namespace EdinInstrum_Library
                     txtSelectedBookInfoData.Text = Wnd.allBooks[selectedBook].GetInfo();
 
                     //Update the database
-                    string query = "update Books set Availability=" + (Wnd.allBooks[selectedBook].availabilty).ToString() + " where ID=" + (selectedBook + 1).ToString();
+                    string query = "update books set Availability=" + (Wnd.allBooks[selectedBook].availabilty).ToString() + " where ID=" + (selectedBook + 1).ToString();
                     Wnd.ExecuteQuery(query);
 
                     //Update the branch database
@@ -218,12 +218,12 @@ namespace EdinInstrum_Library
         {
             if (selectedBook != -1)
             {
+                //Update the database
+                Wnd.ExecuteQuery(Wnd.allBooks[selectedBook].GetRemoveQueryString());
+
                 //Update the local copy
                 lstAllBooks.Items.RemoveAt(selectedBook);
                 Wnd.allBooks.RemoveAt(selectedBook);
-
-                //Update the database
-                Wnd.ExecuteQuery(Wnd.allBooks[selectedBook].GetRemoveQueryString());
 
                 //Update the local index of all the books after the selected, so they still point to the right book
                 for(int i = selectedBook; i < Wnd.allBooks.Count; i++)
@@ -387,7 +387,7 @@ namespace EdinInstrum_Library
             ExitAddBookMode();
 
             //Add book to local books
-            Book b = new Book(editInputFields, Wnd.allBranches[editFieldBranch.SelectedIndex + 1], ++Wnd.highestIndex);
+            Book b = new Book(editInputFields, Wnd.allBranches[editFieldBranch.SelectedIndex], ++Wnd.highestIndex);
             Wnd.allBooks.Add(b);
             lstAllBooks.Items.Add(b.name);
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Callu\source\repos\EdinInstrum_Library\EdinInstrum_Library\obj\Debug\net6.0-windows\
+C:\Users\Callu\source\edInst\EdinburghInstrumentsTest\EdinInstrum_Library\obj\Debug\net6.0-windows\
 EdinInstrum_Library
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Callu\source\repos\EdinInstrum_Library\EdinInstrum_Library\App.xaml
+C:\Users\Callu\source\edInst\EdinburghInstrumentsTest\EdinInstrum_Library\App.xaml
 31443691915
 
 7-201830947
 202-1488902380
 MainPage.xaml;SearchPage.xaml;Wnd.xaml;
 
-True
+False
 

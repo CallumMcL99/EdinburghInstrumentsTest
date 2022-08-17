@@ -55,7 +55,7 @@ namespace EdinInstrum_Library
             lstResults.Items.Clear();
 
             string search = txtSearchBox.Text;
-            string query = "SELECT * FROM Books WHERE Published_Year like '%" + search + "%' OR Name like '%" + search + "%'";
+            string query = "SELECT * FROM books WHERE Published_Year like '%" + search + "%' OR Name like '%" + search + "%'";
 
             if(cmbBoxBranches.SelectedIndex != 0)
             {
